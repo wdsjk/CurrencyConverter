@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency converter</title>
+</head>
+<body>
+    <h1>Currency conversion!</h1>
+
+    <form th:method="POST" th:action="@{/}" th:object="${converter}">
+        <label for="currencyFrom">Enter currency you want to convert: </label>
+        <input type="text" th:field="*{currencyFrom}" id="currencyFrom"/>
+        <br/>
+
+        <label for="currencyTo">Enter currency you want to convert to: </label>
+        <input type="text" th:field="*{currencyTo}" id="currencyTo"/>
+        <br/>
+
+        <label for="amount">Enter amount of money (do not leave this field with 0.0): </label>
+        <input type="text" th:field="*{amount}" id="amount"/>
+        <br/>
+
+        <input type="submit" value="Convert!">
+    </form>
+</body>
+</html>
